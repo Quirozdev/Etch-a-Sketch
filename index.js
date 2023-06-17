@@ -35,21 +35,8 @@ function addHoverEffect(gridCell) {
     gridCell.addEventListener("mouseover", () => {
         gridCell.classList.add("hovered");
     });
-
-    gridCell.addEventListener("mouseout", () => {
-        gridCell.classList.remove("hovered");
-    });
 }
 
-function addTrailingElement() {
-    const trailingElement = document.createElement("div");
-    trailingElement.classList.add("trail");
-    gridContainer.appendChild(trailingElement);
-    gridContainer.addEventListener("mousemove", (event) => {
-        trailingElement.style.left = event.clientX + "px";
-        trailingElement.style.top = event.clientY  + "px";
-    });
-}
 
 function createGridElements(numberOfRows, numberOfColumns) {
     removeGridCells();
@@ -74,5 +61,4 @@ function removeGridCells() {
     }
 }
 
-addTrailingElement();
 createGridElements(16, 16);
